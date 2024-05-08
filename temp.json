@@ -1,0 +1,23 @@
+{
+  "provider_name": "Ministry of Water Resources",
+  "provider_description": "The Ministry of Water Resources is dedicated to the management and conservation of water resources. It focuses on the development of water infrastructure, policy formulation, and sustainable utilization of water. It also monitors soil moisture and water table levels to ensure water security.",
+  "provider_operation": "40",
+  "license": "CC BY-NC-SA",
+  "confidence_levels": [],
+  "datapoint": ["Soil moisture", "Water table"],
+  "spatial_representation": ["Raster"],
+  "spatial_coverage": ["Vanapur", "Aranyam" , "Kananlok", "Girivat", "Haribagh", "Vrikshapur", "Vanamaya", "Sumanvan", "Vanibagh", "Mriduvan", "Neelavan"],
+  "spatial_resolutions": ["500 m","1 km","5 km"],
+  "temporal_coverage": ["1 km","5 km","10 km"],
+  "temporal_resolutions": [],
+  "data_formats": ["CSV", "XML", "JSON", "XLS", "ODS"],
+  "data_sharing_modes": ["FTP", "SFTP", "REST API", "SOAP API", "Cloud Storage", "Email"],
+  "subscription_durations": ["One time"],
+  "price": "$100",
+  "locations": [],
+  "image_key": "sample.png",
+  "title": "Soil hydrology by Ministry of Water Resources",
+  "rating": "4.2",
+  "collection_method": "Surveys"
+}
+//($provider_name: String, $provider_description: String, $provider_operation: String, $license: String, $confidence_levels: jsonb, $datapoint: jsonb, $spatial_representation: jsonb, $spatial_coverage: jsonb, $spatial_resolutions: jsonb, $temporal_coverage: jsonb, $temporal_resolutions: jsonb, $data_formats: jsonb, $data_sharing_modes: jsonb, $subscription_durations: jsonb, $price: String, $locations: jsonb, $image_key: String, $title: String, $rating: String, $collection_method: String) {
