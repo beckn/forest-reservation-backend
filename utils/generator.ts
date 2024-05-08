@@ -9,7 +9,7 @@ const generateTags = (provider:any):components['schemas']['Tags'][]=>{
     { key: "spatial_resolutions", index: 5, display_name: "Spatial Resolutions" },
     { key: "subscription_durations", index: 9, display_name: "Subscription duration" },
     { key: "temporal_coverage", index: 6, display_name: "Temporal Coverage" },
-    { key: "temporal_resolutions", index: 7, display_name: "Temporal Resolutions" },
+    { key: "temporal_resolutions", index: 7, display_name: "Soil hydrology" },
     { key: "confidence_levels", index: 1, display_name: getDisplayName('confidence_levels')},
     { key: "data_formats", index: 8, display_name: "Data formats" },
     { key: "datapoint", index: 2, display_name: getDisplayName('datapoint') }
@@ -40,7 +40,7 @@ const getDisplayName = (key:string)=>{
     {'confidence_levels':'Forecast confidence levels','datapoint':'Weather datapoints'},
     {'confidence_levels':'Model Confidence Levels','datapoint':'Population Exposure Datapoints'},
   ];
-  const defaultNames = {'confidence_levels':'Model Confidence Levels','datapoint':'Flood Prediction Datapoints'}
+  const defaultNames = {'confidence_levels':'Confidence Levels','datapoint':'Forest datapoints'}
   const dbName = process.env.DBNAME;
   const index = catalogArr.findIndex(function(sub) {
     return sub.includes(dbName);
@@ -166,6 +166,12 @@ export const flnCatalogGenerator = (
                 name: "Provider's years in operation"
               },
               value: provider["provider_operation"]
+            },
+            {
+              descriptor: {
+                name: "Data collection method"
+              },
+              value: provider["collection_method"]
             }
           ]
         }

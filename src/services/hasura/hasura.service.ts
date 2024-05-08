@@ -2044,9 +2044,10 @@ export class HasuraService {
     const query = `query MyQuery {
       ${this.dbName}(where: ${filterQ}) {
         id
-        provider_name
-        provider_description
-        provider_operation
+        confidence_levels
+        data_formats
+        datapoint
+        data_sharing_modes
         locations
         spatial_coverage
         spatial_representation
@@ -2054,15 +2055,15 @@ export class HasuraService {
         subscription_durations
         temporal_coverage
         temporal_resolutions
+        collection_method
+        image_key
         license
         price
-        confidence_levels
-        data_formats
-        data_sharing_modes
-        datapoint
-        image_key
-        title
+        provider_description
+        provider_name
+        provider_operation
         rating
+        title
       }
     }`;
     console.log("query >>> ",query);
@@ -2080,23 +2081,26 @@ export class HasuraService {
     const query = `query MyQuery {
       ${this.dbName}(where: {id: {_eq: ${id}}}) {
         id
-        provider_name
-        provider_description
-        provider_operation
-        spatial_coverage
+        confidence_levels
+        data_formats
+        datapoint
+        data_sharing_modes
         locations
+        spatial_coverage
         spatial_representation
         spatial_resolutions
         subscription_durations
         temporal_coverage
         temporal_resolutions
+        collection_method
+        image_key
         license
         price
-        confidence_levels
-        data_formats
-        data_sharing_modes
-        datapoint
-        image_key
+        provider_description
+        provider_name
+        provider_operation
+        rating
+        title
       }
     }`;
     try {
