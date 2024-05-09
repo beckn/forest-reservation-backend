@@ -33,10 +33,12 @@ const generateTags = (provider:any):components['schemas']['Tags'][]=>{
 
 const getDisplayName = (key:string)=>{
   const catalogArr = [
-    ['ecoclima','national_meteorological_department','ministry_of_agriculture_2',"indian_institute_of_technology"]
+    ['ecoclima','national_meteorological_department','ministry_of_agriculture_2',"indian_institute_of_technology"],
+    ['envirogrowth','forestSnap']
   ];
   const nameObj = [
     {'datapoint':'Climate datapoints','temporal_resolutions':"Soil datapoints"},
+    {'datapoint':'Forest datapoints','temporal_resolutions':"Frequency"},
   ];
   const defaultNames = {'datapoint':'Forest datapoints','temporal_resolutions':"Soil hydrology"}
   const dbName = process.env.DBNAME;
