@@ -9,8 +9,8 @@ const generateTags = (provider:any):components['schemas']['Tags'][]=>{
     { key: "spatial_resolutions", index: 5, display_name: "Spatial Resolutions" },
     { key: "subscription_durations", index: 9, display_name: "Subscription duration" },
     { key: "temporal_coverage", index: 6, display_name: "Temporal Coverage" },
-    { key: "temporal_resolutions", index: 7, display_name: "Soil hydrology" },
-    { key: "confidence_levels", index: 1, display_name: getDisplayName('confidence_levels')},
+    { key: "temporal_resolutions", index: 7, display_name: getDisplayName('temporal_resolutions') },
+    { key: "confidence_levels", index: 1, display_name:"Confidence Levels"},
     { key: "data_formats", index: 8, display_name: "Data formats" },
     { key: "datapoint", index: 2, display_name: getDisplayName('datapoint') }
   ].sort((a, b)=> a.index-b.index);
@@ -33,14 +33,12 @@ const generateTags = (provider:any):components['schemas']['Tags'][]=>{
 
 const getDisplayName = (key:string)=>{
   const catalogArr = [
-    ['national_meterological_department','weathermet','aquaweather'],
-    ['ministry_of_health' ,'statistics_bureau', 'ministry_of_home' ,'lepro_care_foundation']
+    ['ecoclima','national_meteorological_department','ministry_of_agriculture_2',"indian_institute_of_technology"]
   ];
   const nameObj = [
-    {'confidence_levels':'Forecast confidence levels','datapoint':'Weather datapoints'},
-    {'confidence_levels':'Model Confidence Levels','datapoint':'Population Exposure Datapoints'},
+    {'datapoint':'Climate datapoints','temporal_resolutions':"Soil datapoints"},
   ];
-  const defaultNames = {'confidence_levels':'Confidence Levels','datapoint':'Forest datapoints'}
+  const defaultNames = {'datapoint':'Forest datapoints','temporal_resolutions':"Soil hydrology"}
   const dbName = process.env.DBNAME;
   const index = catalogArr.findIndex(function(sub) {
     return sub.includes(dbName);
